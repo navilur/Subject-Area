@@ -18,6 +18,24 @@ const subject = ref(null);
 
 watch(singleSubjectsData, (newSingleSubjectsData) => {
   subject.value = newSingleSubjectsData;
+
+  if (newSingleSubjectsData) {
+    document.title = newSingleSubjectsData.subject_area || "Popular Subjects";
+
+    const descriptionContent = `Learn more about ${
+      newSingleSubjectsData.subject_area
+    } under the ${
+      newSingleSubjectsData.subject_area_department?.name || "related"
+    } department.`;
+
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.name = "description";
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute("content", descriptionContent);
+  }
 });
 
 onMounted(() => {
