@@ -2,6 +2,7 @@
 import { useSubjectStore } from "@/stores/subjects";
 import { computed, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
+import SubjectDetailsSkeleton from "./SubjectDetailsSkeleton.vue";
 
 const subjectStore = useSubjectStore();
 
@@ -26,7 +27,7 @@ onMounted(() => {
 
 <template>
   <div class="container mx-auto px-4 py-10">
-    <div v-if="loading" class="text-center text-gray-500">Loading...</div>
+    <SubjectDetailsSkeleton v-if="loading" />
     <div v-else-if="error" class="text-center text-red-600">{{ error }}</div>
 
     <div

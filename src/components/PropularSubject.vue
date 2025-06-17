@@ -2,7 +2,7 @@
 import { onMounted, ref, computed, watch } from "vue";
 import { useSubjectStore } from "@/stores/subjects";
 import SubjectCard from "./SubjectCard.vue";
-import Skeleton from "./Skeleton.vue";
+import SubjectCardSkeleton from "./SubjectCardSkeleton.vue";
 
 const subjectStore = useSubjectStore();
 
@@ -51,7 +51,8 @@ onMounted(() => {
     <div
       class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-6"
     >
-      <Skeleton v-if="loading" v-for="n in 8" :key="n" />
+      <SubjectCardSkeleton v-if="loading" v-for="n in 8" :key="n" />
+
       <SubjectCard
         v-else
         v-for="data in currentSubjects"

@@ -28,7 +28,7 @@ const goToDetails = () => {
     </template>
     <template #footer>
       <Button
-        label="Buy Now"
+        label="Details"
         icon="pi pi-shopping-cart"
         style="background-color: #e87000; border: none; width: 100%"
         class="hover:bg-orange-600"
