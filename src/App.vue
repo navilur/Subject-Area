@@ -4,10 +4,22 @@
   <!-- Header -->
   <header class="bg-white shadow">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <img src="@/assets/logo.png" class="h-10 object-cover rounded-t-xl" />
+      <RouterLink to="/">
+        <img src="@/assets/logo.png" class="h-10 object-cover rounded-t-xl" />
+      </RouterLink>
       <nav class="space-x-4 text-sm font-medium">
-        <RouterLink to="/" class="hover:text-[#e87000]">Home</RouterLink>
-        <RouterLink to="/about" class="hover:text-[#e87000]">About</RouterLink>
+        <RouterLink
+          to="/"
+          class="hover:text-[#e87000]"
+          exact-active-class="text-[#e87000] font-semibold"
+          >Home</RouterLink
+        >
+        <RouterLink
+          to="/about"
+          class="hover:text-[#e87000]"
+          exact-active-class="text-[#e87000] font-semibold"
+          >About</RouterLink
+        >
       </nav>
     </div>
   </header>

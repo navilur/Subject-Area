@@ -16,7 +16,7 @@ const router = createRouter({
     },
     {
       path: "/subject/:id",
-      name: "about",
+      name: "SubjectDetail",
       component: () => import("../components/SubjectDetail.vue"),
     },
   ],
